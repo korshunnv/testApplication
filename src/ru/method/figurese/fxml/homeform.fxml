@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeFormController">
+   <children>
+      <Accordion>
+        <panes>
+          <TitledPane animated="false" text="Полезависимость или поленезависимость" wrapText="true">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="dependenceListView" layoutX="28.4" layoutY="29.4" onMouseClicked="#chooseItem" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+          </TitledPane>
+          <TitledPane animated="false" text="Узкий или широкий диапазон эквивалентности">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="rangeOfEquivalenceListView" layoutX="26.0" layoutY="28.0" onMouseClicked="#chooseItem" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+          </TitledPane>
+          <TitledPane animated="false" text="Ригидный или гибкий познавательный контроль">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+          </TitledPane>
+            <TitledPane animated="false" text="Толерантность к нереалистическому опыту">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TitledPane>
+        </panes>
+         <HBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </HBox.margin>
+      </Accordion>
+      <AnchorPane fx:id="testsPanel" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</HBox>
