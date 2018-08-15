@@ -9,8 +9,8 @@ public class FieldDependenceStyle implements CognitiveStyle {
 
     public static Map<String, String> createDependenceMap(){
         return new HashMap<String, String>(){{
-            put("Методика «Включенные фигуры»","../ru/method/figurese/fxml/testquestionform.fxml");
-            put("Методика «Стержень — рамка»","../ru/method/figurese/fxml/firstform.fxml");
+            put("Методика «Включенные фигуры»","../ru/method/figurese/fxml/firstform.fxml");//"../ru/method/figurese/fxml/testquestionform.fxml");
+            put("Методика «Стержень — рамка»","../ru/method/figurese/fxml/defaultform.fxml");
         }};
     }
 

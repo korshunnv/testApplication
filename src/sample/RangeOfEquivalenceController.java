@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.AnchorPane;
 import ru.method.figurese.models.MiniMax;
 import ru.method.figurese.models.Question;
 import ru.method.figurese.models.QuestionList;
@@ -16,9 +17,9 @@ import java.io.IOException;
 
 public class RangeOfEquivalenceController {
 
-    int index=0;
+    private int index=0;
 
-    QuestionList questionList;
+    private QuestionList questionList;
 
     private double [] answers;
 
@@ -79,13 +80,15 @@ public class RangeOfEquivalenceController {
             }
             countLarge=k/questionList.size();
             //fxml-файл новой формы
-            Parent root = null;
             try {
-                root = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/endquestionform.fxml"));
-                Main.primaryStage.setTitle("результат методики «Средние суждения»");
-                Main.primaryStage.setMinHeight(550);
-                Main.primaryStage.setMinWidth(458);
-                Main.primaryStage.setScene(new Scene(root));
+                Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/endquestionform.fxml"));
+                AnchorPane tilePane = (AnchorPane) ((Button)actionEvent.getSource()).getParent().getParent().getParent();
+                AnchorPane.setBottomAnchor(panel,0.0);
+                AnchorPane.setLeftAnchor(panel,0.0);
+                AnchorPane.setRightAnchor(panel,0.0);
+                AnchorPane.setTopAnchor(panel,0.0);
+                tilePane.getChildren().clear();
+                tilePane.getChildren().add(panel);
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -30,12 +30,13 @@ public class FirstFormController {
             //fxml-файл новой формы
             Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/testquestionform.fxml"));
             AnchorPane tilePane = (AnchorPane) ((Button)actionEvent.getSource()).getParent().getParent().getParent();
+            AnchorPane.setBottomAnchor(panel,0.0);
+            AnchorPane.setLeftAnchor(panel,0.0);
+            AnchorPane.setRightAnchor(panel,0.0);
+            AnchorPane.setTopAnchor(panel,0.0);
             tilePane.getChildren().clear();
             tilePane.getChildren().add(panel);
-            /*Main.primaryStage.setTitle("Методика «Включенные фигуры»");
-            Main.primaryStage.setMinHeight(550);
-            Main.primaryStage.setMinWidth(458);
-            Main.primaryStage.setScene(new Scene(root));*/
+            //Main.primaryStage.setTitle("Тест «Включенные фигуры»");
             //создание листа из задач с ответами
             taskList = TaskList.createTaskList();
             //текущее время (мс)

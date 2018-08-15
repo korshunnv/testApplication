@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import ru.method.figurese.models.TaskList;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -15,7 +16,7 @@ import java.io.IOException;
 
 public class TestQuestionController {
 
-    int index=0;
+    private int index=0;
     @FXML
     ImageView taskImage;
 
@@ -40,11 +41,15 @@ public class TestQuestionController {
             }
             else {
                 //fxml-файл новой формы
-                Parent root = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/endform.fxml"));
-                Main.primaryStage.setTitle("результат теста «Включенные фигуры»");
-                Main.primaryStage.setMinHeight(550);
-                Main.primaryStage.setMinWidth(458);
-                Main.primaryStage.setScene(new Scene(root));
+                Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/endform.fxml"));
+                AnchorPane tilePane = (AnchorPane) ((Button)actionEvent.getSource()).getParent().getParent().getParent().getParent();
+                AnchorPane.setBottomAnchor(panel,0.0);
+                AnchorPane.setLeftAnchor(panel,0.0);
+                AnchorPane.setRightAnchor(panel,0.0);
+                AnchorPane.setTopAnchor(panel,0.0);
+                tilePane.getChildren().clear();
+                tilePane.getChildren().add(panel);
+                //Main.primaryStage.setTitle("Результат теста «Включенные фигуры»");
             }
         }
         catch (IOException e){

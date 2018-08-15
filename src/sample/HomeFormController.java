@@ -29,7 +29,7 @@ public class HomeFormController {
     /**
      * вспомогательная переменная для хранения соответствия списка методик когнитивного стиля и класса данного стиля
      */
-    Map<ListView, Map<String, String>> dictionary;
+    private Map<ListView, Map<String, String>> dictionary;
     @FXML
     public void initialize(){
         //создание соответствия списка когнитивного стиля и соответствующего класса с его методиками
@@ -43,9 +43,11 @@ public class HomeFormController {
 
         try {
                 Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/defaultform.fxml"));
-                //panel.setPickOnBounds(true);
-                //panel.autosize();
-                testsPanel.getChildren().add(panel);
+                AnchorPane.setBottomAnchor(panel,0.0);
+                AnchorPane.setLeftAnchor(panel,0.0);
+                AnchorPane.setRightAnchor(panel,0.0);
+                AnchorPane.setTopAnchor(panel,0.0);
+                testsPanel.getChildren().setAll(panel);//add(panel);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -84,5 +86,6 @@ public class HomeFormController {
         }
         testsPanel.getChildren().clear();
         testsPanel.getChildren().add(panel);
+        Main.primaryStage.setTitle(method);
     }
 }
