@@ -1,5 +1,7 @@
 package ru.method.figurese.models;
 
+import javafx.scene.image.Image;
+
 import java.util.*;
 
 public class TaskList {
@@ -20,7 +22,8 @@ public class TaskList {
 
     private static TaskList instance = null;
     private List<Task> taskList;
-    private final String address="C:\\Users\\korshun\\Desktop\\JavaFX\\testApplication\\src\\sample\\pictures\\";
+    private final String address="/sample/pictures/";
+    //private final String address="C:\\Users\\korshun\\Desktop\\JavaFX\\testApplication\\src\\sample\\pictures\\";
     private final String fileExtension=".png";
 
     private TaskList(){

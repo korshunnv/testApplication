@@ -22,12 +22,13 @@ public class TestQuestionController {
 
     @FXML
     public void initialize(){
-        try {
-            Image image = new Image(new FileInputStream("C:\\Users\\korshun\\Desktop\\JavaFX\\testApplication\\src\\sample\\pictures\\1.png"));
+        //try {
+            Image image = new Image(getClass().getResource("/sample/pictures/1.png").toString());
+                    //new Image(new FileInputStream("C:\\Users\\korshun\\Desktop\\JavaFX\\testApplication\\src\\sample\\pictures\\1.png"));
             taskImage.setImage(image);
-        } catch (FileNotFoundException e) {
+        /*} catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void chooseAnswer(ActionEvent actionEvent) {
@@ -35,7 +36,8 @@ public class TestQuestionController {
             TaskList taskList = FirstFormController.taskList;
             if (FirstFormController.index<taskList.size()-1) {
                 index = ++FirstFormController.index;
-                Image image = new Image(new FileInputStream(taskList.getElement(index).getPictureAddress()));
+                Image image = new Image(getClass().getResource(taskList.getElement(index).getPictureAddress()).toString());
+                //Image image = new Image(new FileInputStream(taskList.getElement(index).getPictureAddress()));
                 taskImage.setImage(image);//taskList.getTask(index).getPictureAddress()));
                 taskList.getElement(--index).setRealAnswer(((Button)actionEvent.getSource()).getText());
             }
