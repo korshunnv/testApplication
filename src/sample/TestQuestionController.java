@@ -10,8 +10,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import ru.method.figurese.models.TaskList;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class TestQuestionController {
@@ -43,7 +41,7 @@ public class TestQuestionController {
             }
             else {
                 //fxml-файл новой формы
-                Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/endform.fxml"));
+                Parent panel = FXMLLoader.load(getClass().getResource("/ru/method/figurese/fxml/endform.fxml"));
                 AnchorPane tilePane = (AnchorPane) ((Button)actionEvent.getSource()).getParent().getParent().getParent().getParent();
                 AnchorPane.setBottomAnchor(panel,0.0);
                 AnchorPane.setLeftAnchor(panel,0.0);

@@ -15,7 +15,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/homeform.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ru/method/figurese/fxml/homeform.fxml"));
         primaryStage.setTitle("Когнитивные стили и тесты для их определения");
         primaryStage.setResizable(false);
         primaryStage.setScene(new Scene(root));

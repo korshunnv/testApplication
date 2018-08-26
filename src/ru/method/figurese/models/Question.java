@@ -4,17 +4,30 @@ public class Question {
     private String text;
     private String questionMin;
     private String questionMax;
+
+    private String textSound;
+    private String questionMinSound;
+    private String questionMaxSound;
+    private String textPicture;
     private double max;
     private double min;
     private MiniMax miniMax;
 
-    public Question(String text, String questionMin, String questionMax, double min, double max) {
+    private Question(String text, String questionMin, String questionMax, double min, double max) {
         this.text = text;
         this.questionMin = questionMin;
         this.questionMax = questionMax;
         this.max = max;
         this.min = min;
         miniMax=new MiniMax(min, max);
+    }
+    public Question(String text, String questionMin, String questionMax, double min, double max,
+                    String textSound, String questionMinSound, String questionMaxSound, String textPicture) {
+        this(text, questionMin, questionMax, min, max);
+        this.textSound=textSound;
+        this.questionMinSound=questionMinSound;
+        this.questionMaxSound=questionMaxSound;
+        this.textPicture=textPicture;
     }
 
     public void setText(String text) {
@@ -60,5 +73,21 @@ public class Question {
 
     public MiniMax getMiniMax(){
         return miniMax;
+    }
+
+    public String getTextSound() {
+        return textSound;
+    }
+
+    public String getQuestionMinSound() {
+        return questionMinSound;
+    }
+
+    public String getQuestionMaxSound() {
+        return questionMaxSound;
+    }
+
+    public String getTextPicture() {
+        return textPicture;
     }
 }

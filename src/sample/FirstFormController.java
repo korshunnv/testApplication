@@ -28,7 +28,7 @@ public class FirstFormController {
     public void testStart(ActionEvent actionEvent) {
         try {
             //fxml-файл новой формы
-            Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/testquestionform.fxml"));
+            Parent panel = FXMLLoader.load(getClass().getResource("/ru/method/figurese/fxml/testquestionform.fxml"));
             AnchorPane tilePane = (AnchorPane) ((Button)actionEvent.getSource()).getParent().getParent().getParent();
             AnchorPane.setBottomAnchor(panel,0.0);
             AnchorPane.setLeftAnchor(panel,0.0);

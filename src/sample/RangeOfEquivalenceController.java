@@ -4,16 +4,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.AudioClip;
 import ru.method.figurese.models.MiniMax;
 import ru.method.figurese.models.Question;
 import ru.method.figurese.models.QuestionList;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class RangeOfEquivalenceController {
 
@@ -30,6 +33,9 @@ public class RangeOfEquivalenceController {
 
     @FXML
     TextArea textQuestionTextArea;
+
+    @FXML
+    ImageView textQuestionPictureImageView;
 
     @FXML
     TextArea questionMinTextArea;
@@ -54,6 +60,8 @@ public class RangeOfEquivalenceController {
 
     private void printQuestion(Question question){
         textQuestionTextArea.setText(question.getText());
+        Image image = new Image(getClass().getResource(question.getTextPicture()).toString());
+        textQuestionPictureImageView.setImage(image);
         questionMinTextArea.setText(question.getQuestionMin());
         questionMaxTextArea.setText(question.getQuestionMax());
         questionMinSlider.setMin(question.getMin());
@@ -62,6 +70,7 @@ public class RangeOfEquivalenceController {
         questionMaxSlider.setMin(question.getMin());
         questionMaxSlider.setMax(question.getMax());
         questionMaxSlider.setValue(question.getMin());
+        //добавление звука
     }
 
     public void nextQuestion(ActionEvent actionEvent) {
@@ -81,7 +90,7 @@ public class RangeOfEquivalenceController {
             countLarge=k/questionList.size();
             //fxml-файл новой формы
             try {
-                Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/endquestionform.fxml"));
+                Parent panel = FXMLLoader.load(getClass().getResource("/ru/method/figurese/fxml/endquestionform.fxml"));
                 AnchorPane tilePane = (AnchorPane) ((Button)actionEvent.getSource()).getParent().getParent().getParent();
                 AnchorPane.setBottomAnchor(panel,0.0);
                 AnchorPane.setLeftAnchor(panel,0.0);
@@ -100,5 +109,23 @@ public class RangeOfEquivalenceController {
         double max=questionMaxSlider.getValue();
         double min=questionMinSlider.getValue();
         answers[index]=new MiniMax(min,max).absMaxMin()/questionList.getElement(index).getMiniMax().absMaxMin();
+    }
+
+    public void textSoundPlay(ActionEvent actionEvent) {
+        final URL resource = getClass().getResource(questionList.getElement(index).getTextSound());
+        final AudioClip clip = new AudioClip(resource.toString());
+        clip.play();
+    }
+
+    public void minSoundPlay(ActionEvent actionEvent) {
+        final URL resource = getClass().getResource(questionList.getElement(index).getQuestionMinSound());
+        final AudioClip clip = new AudioClip(resource.toString());
+        clip.play();
+    }
+
+    public void maxSoundPlay(ActionEvent actionEvent) {
+        final URL resource = getClass().getResource(questionList.getElement(index).getQuestionMaxSound());
+        final AudioClip clip = new AudioClip(resource.toString());
+        clip.play();
     }
 }

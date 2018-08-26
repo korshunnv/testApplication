@@ -42,7 +42,7 @@ public class HomeFormController {
         setItemsListView(rangeOfEquivalenceListView, dictionary.get(rangeOfEquivalenceListView));
 
         try {
-                Parent panel = FXMLLoader.load(getClass().getResource("../ru/method/figurese/fxml/defaultform.fxml"));
+                Parent panel = FXMLLoader.load(getClass().getResource("/ru/method/figurese/fxml/defaultform.fxml"));
                 AnchorPane.setBottomAnchor(panel,0.0);
                 AnchorPane.setLeftAnchor(panel,0.0);
                 AnchorPane.setRightAnchor(panel,0.0);

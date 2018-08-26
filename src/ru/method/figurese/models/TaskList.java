@@ -1,7 +1,5 @@
 package ru.method.figurese.models;
 
-import javafx.scene.image.Image;
-
 import java.util.*;
 
 public class TaskList {

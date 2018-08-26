@@ -10,11 +10,11 @@ public class RangeOfEquivalenceStyle implements CognitiveStyle {
 
     public static Map<String, String> createDependenceMap(){
         return new HashMap<String, String>(){{
-            put("Тест Т. Петтигрю «Средние суждения»","../ru/method/figurese/fxml/rangeofequivalence.fxml");
-            put("Тест С. Филленбаума","../ru/method/figurese/fxml/defaultform.fxml");
-            put("Тест синонимов","../ru/method/figurese/fxml/defaultform.fxml");
-            put("Методика «Свободная сортировка объектов»","../ru/method/figurese/fxml/defaultform.fxml");
-            put("Методика «Константность размера»","../ru/method/figurese/fxml/defaultform.fxml");
+            put("Тест Т. Петтигрю «Средние суждения»","/ru/method/figurese/fxml/rangeofequivalence.fxml");
+            put("Тест С. Филленбаума","/ru/method/figurese/fxml/defaultform.fxml");
+            put("Тест синонимов","/ru/method/figurese/fxml/defaultform.fxml");
+            put("Методика «Свободная сортировка объектов»","/ru/method/figurese/fxml/defaultform.fxml");
+            put("Методика «Константность размера»","/ru/method/figurese/fxml/defaultform.fxml");
         }};
     }
 
